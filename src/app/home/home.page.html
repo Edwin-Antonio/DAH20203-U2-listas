@@ -1,20 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Agenda DAH
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>List</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-list-header>
+          Lista de Contactos
+        </ion-list-header>
+
+        <ion-item *ngFor="let contact of contacts">
+          <ion-avatar slot="start">
+            <img src="{{contact.image}}">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{contact.name}}</h2>
+            <h3>{{contact.number}}</h3>
+            <p>{{contact.description}}</p>
+          </ion-label>
+        </ion-item>
+
+        
+
+        
+      </ion-list>
+    </ion-content>
+  </ion-app>
 </ion-content>
